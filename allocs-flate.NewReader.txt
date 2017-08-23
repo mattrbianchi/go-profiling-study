@@ -1,0 +1,19 @@
+Total: 350.60MB
+ROUTINE ======================== compress/flate.NewReader in /usr/local/Cellar/go/1.8/libexec/src/compress/flate/inflate.go
+  194.39MB   194.39MB (flat, cum) 55.44% of Total
+         .          .    782://
+         .          .    783:// The ReadCloser returned by NewReader also implements Resetter.
+         .          .    784:func NewReader(r io.Reader) io.ReadCloser {
+         .          .    785:	fixedHuffmanDecoderInit()
+         .          .    786:
+   24.61MB    24.61MB    787:	var f decompressor
+         .          .    788:	f.r = makeReader(r)
+   14.04MB    14.04MB    789:	f.bits = new([maxNumLit + maxNumDist]int)
+       1MB        1MB    790:	f.codebits = new([numCodes]int)
+         .          .    791:	f.step = (*decompressor).nextBlock
+  154.74MB   154.74MB    792:	f.dict.init(maxMatchOffset, nil)
+         .          .    793:	return &f
+         .          .    794:}
+         .          .    795:
+         .          .    796:// NewReaderDict is like NewReader but initializes the reader
+         .          .    797:// with a preset dictionary. The returned Reader behaves as if

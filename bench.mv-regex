@@ -1,0 +1,3 @@
+BenchmarkGenerateCat1-4   	     200	   8121824 ns/op	 1171029 B/op	   15392 allocs/op
+PASS
+ok  	github.com/projectcypress/cdatools/exporter	2.455s

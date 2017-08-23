@@ -1,0 +1,20 @@
+Total: 350.60MB
+ROUTINE ======================== github.com/projectcypress/cdatools/exporter.bindataRead in /Users/mbianchi/src/github.com/projectcypress/cdatools/exporter/templates.go
+       1MB   214.43MB (flat, cum) 61.16% of Total
+         .          .    130:	"strings"
+         .          .    131:	"time"
+         .          .    132:)
+         .          .    133:
+         .          .    134:func bindataRead(data []byte, name string) ([]byte, error) {
+  512.05kB   197.89MB    135:	gz, err := gzip.NewReader(bytes.NewBuffer(data))
+         .          .    136:	if err != nil {
+         .          .    137:		return nil, fmt.Errorf("Read %q: %v", name, err)
+         .          .    138:	}
+         .          .    139:
+  512.05kB   512.05kB    140:	var buf bytes.Buffer
+         .    16.04MB    141:	_, err = io.Copy(&buf, gz)
+         .          .    142:	clErr := gz.Close()
+         .          .    143:
+         .          .    144:	if err != nil {
+         .          .    145:		return nil, fmt.Errorf("Read %q: %v", name, err)
+         .          .    146:	}

@@ -1,0 +1,8 @@
+benchmark                   old ns/op     new ns/op     delta
+BenchmarkGenerateCat1-4     10652038      8517520       -20.04%
+
+benchmark                   old allocs     new allocs     delta
+BenchmarkGenerateCat1-4     16243          15632          -3.76%
+
+benchmark                   old bytes     new bytes     delta
+BenchmarkGenerateCat1-4     3977365       1481435       -62.75%
